@@ -13,6 +13,9 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
 </head>
 
 <body>
@@ -44,9 +47,14 @@ session_start();
                     ?>
                     <div class="box">
                         <form action="cadastrar.php" method="POST">
+                        <div class="field">
+                            <div class="control">
+                                <input name="cpf" type="text" class="input is-large" placeholder="CPF" autofocus="" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()">
+                            </div>
+                        </div>
                             <div class="field">
                                 <div class="control">
-                                    <input name="nome" type="text" class="input is-large" placeholder="Nome" autofocus>
+                                    <input name="nome" type="text" class="input is-large" placeholder="Nome">
                                 </div>
                             </div>
                             <div class="field">
@@ -60,7 +68,7 @@ session_start();
                                 </div>
                             </div>
                             <button type="submit" class="button is-block is-link is-large is-fullwidth">Cadastrar</button>
-                            <div class="fiedl">
+                            <div class="field">
                                 <a href="index.php">Voltar</a>
                             </div>
                         </form>

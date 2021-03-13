@@ -5,8 +5,9 @@ include('conexao.php');
 $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
 $usuario = mysqli_real_escape_string($conexao, trim($_POST['usuario']));
 $senha = mysqli_real_escape_string($conexao, trim(md5($_POST['senha'])));
+$cpf = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
 
-$sql = "select count(*) as total from usuario where usuario = '$usuario'";
+$sql = "select count(*) as total from usuario where cpf = '$cpf'";
 $result = mysqli_query($conexao, $sql);
 $row = mysqli_fetch_assoc($result);
 
@@ -16,7 +17,7 @@ if($row['total'] == 1){
     exit;
 }
 
-$sql = "INSERT INTO usuario (nome, usuario, senha, data_cadastro) VALUES ('$nome', '$usuario', '$senha', NOW())";
+$sql = "INSERT INTO usuario (nome, usuario, senha, cpf, data_cadastro) VALUES ('$nome', '$usuario', '$senha','$cpf', NOW())";
 
 if($conexao->query($sql) === TRUE){
     $_SESSION['status_cadastro'] = true;

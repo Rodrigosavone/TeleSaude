@@ -12,6 +12,9 @@ session_start();
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="css/bulma.min.css" />
     <link rel="stylesheet" type="text/css" href="css/login.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mask.min.js"></script>
 </head>
 
 <body>
@@ -34,7 +37,7 @@ session_start();
                         <form action="login.php" method="POST">
                             <div class="field">
                                 <div class="control">
-                                    <input name="usuario" name="text" class="input is-large" placeholder="Seu usuário" autofocus="">
+                                    <input name="cpf" type="text" class="input is-large" placeholder="CPF" autofocus="" autocomplete="off" maxlength="14" onkeyup="mascara_cpf()">
                                 </div>
                             </div>
 

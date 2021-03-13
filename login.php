@@ -2,15 +2,15 @@
 session_start();
 include('conexao.php');
 
-if(empty($_POST['usuario']) || empty($_POST['senha'])){
+if(empty($_POST['cpf']) || empty($_POST['senha'])){
     header('Location: index.php');
     exit();
 }
 
-$usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
+$cpf = mysqli_real_escape_string($conexao, $_POST['cpf']);
 $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
-$query = "select nome from usuario where usuario = '{$usuario}' and senha = '{$senha}'";
+$query = "select nome from usuario where cpf = '{$cpf}' and senha = '{$senha}'";
 
 $result = mysqli_query($conexao, $query);
 
