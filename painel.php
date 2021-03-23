@@ -28,6 +28,10 @@
 
   include 'view/templates/header.php';
   ?>
+
+<?php
+  include 'view/templates/anamnese.php';
+?>
 <!--Footer-->
 <?php
   include 'view/templates/footer.php';
